@@ -26,7 +26,7 @@ const uint8_t DSHOT_150_BIT_0 = 120;
 const uint8_t NUM_DSHOT_MOTORS = 4;
 
 extern TIM_HandleTypeDef *PWM_TIM;
-extern TIM_HandleTypeDef DSHOT_TIM;
+extern TIM_HandleTypeDef *DSHOT_TIM;
 
 static uint32_t DMAMotorBuffer1[DSHOT_DMA_BUFFER_SIZE];
 static uint32_t DMAMotorBuffer2[DSHOT_DMA_BUFFER_SIZE];
@@ -34,10 +34,10 @@ static uint32_t DMAMotorBuffer3[DSHOT_DMA_BUFFER_SIZE];
 static uint32_t DMAMotorBuffer4[DSHOT_DMA_BUFFER_SIZE];
 
 static const PWMPinConfig PWM_CONFIG[MAX_CHANNELS]{
-    {DSHOT1_Pin, DSHOT1_GPIO_Port, &htim1, TIM_CHANNEL_1, true, DMAMotorBuffer1, TIM_DMA_ID_CC1, TIM_DMA_CC1},
-    {DSHOT2_Pin, DSHOT2_GPIO_Port, &htim1, TIM_CHANNEL_2, true, DMAMotorBuffer2, TIM_DMA_ID_CC2, TIM_DMA_CC2},
-    {DSHOT3_Pin, DSHOT3_GPIO_Port, &htim1, TIM_CHANNEL_3, true, DMAMotorBuffer3, TIM_DMA_ID_CC3, TIM_DMA_CC3},
-    {DSHOT4_Pin, DSHOT4_GPIO_Port, &htim1, TIM_CHANNEL_4, true, DMAMotorBuffer4, TIM_DMA_ID_CC4, TIM_DMA_CC4},
+    {DSHOT1_Pin, DSHOT1_GPIO_Port, DSHOT_TIM, TIM_CHANNEL_1, true, DMAMotorBuffer1, TIM_DMA_ID_CC1, TIM_DMA_CC1},
+    {DSHOT2_Pin, DSHOT2_GPIO_Port, DSHOT_TIM, TIM_CHANNEL_2, true, DMAMotorBuffer2, TIM_DMA_ID_CC2, TIM_DMA_CC2},
+    {DSHOT3_Pin, DSHOT3_GPIO_Port, DSHOT_TIM, TIM_CHANNEL_3, true, DMAMotorBuffer3, TIM_DMA_ID_CC3, TIM_DMA_CC3},
+    {DSHOT4_Pin, DSHOT4_GPIO_Port, DSHOT_TIM, TIM_CHANNEL_4, true, DMAMotorBuffer4, TIM_DMA_ID_CC4, TIM_DMA_CC4},
     {PWM1_Pin, PWM1_GPIO_Port, PWM_TIM, TIM_CHANNEL_1, false, {0}, 0, 0},
     {PWM2_Pin, PWM2_GPIO_Port, PWM_TIM, TIM_CHANNEL_2, false, {0}, 0, 0},
     {PWM3_Pin, PWM3_GPIO_Port, PWM_TIM, TIM_CHANNEL_3, false, {0}, 0, 0},
