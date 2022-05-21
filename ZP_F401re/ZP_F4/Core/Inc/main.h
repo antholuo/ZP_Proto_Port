@@ -49,6 +49,8 @@ extern "C" {
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -59,18 +61,78 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define B1_Pin GPIO_PIN_13
 #define B1_GPIO_Port GPIOC
+#define RSSI_Pin GPIO_PIN_1
+#define RSSI_GPIO_Port GPIOC
+#define SPI2_MISO_Pin GPIO_PIN_2
+#define SPI2_MISO_GPIO_Port GPIOC
+#define SPI2_MOSI_Pin GPIO_PIN_3
+#define SPI2_MOSI_GPIO_Port GPIOC
 #define USART_TX_Pin GPIO_PIN_2
 #define USART_TX_GPIO_Port GPIOA
 #define USART_RX_Pin GPIO_PIN_3
 #define USART_RX_GPIO_Port GPIOA
 #define LD2_Pin GPIO_PIN_5
 #define LD2_GPIO_Port GPIOA
+#define PWM1_Pin GPIO_PIN_6
+#define PWM1_GPIO_Port GPIOA
+#define PWM2_Pin GPIO_PIN_7
+#define PWM2_GPIO_Port GPIOA
+#define GPIO_Analog3_Pin GPIO_PIN_4
+#define GPIO_Analog3_GPIO_Port GPIOC
+#define GPIO_Analog2_Pin GPIO_PIN_5
+#define GPIO_Analog2_GPIO_Port GPIOC
+#define PWM3_Pin GPIO_PIN_0
+#define PWM3_GPIO_Port GPIOB
+#define PWM4_Pin GPIO_PIN_1
+#define PWM4_GPIO_Port GPIOB
+#define GPIO_Analog1_Pin GPIO_PIN_2
+#define GPIO_Analog1_GPIO_Port GPIOB
+#define BUZZER_Pin GPIO_PIN_10
+#define BUZZER_GPIO_Port GPIOB
+#define SPI2_SCK_Pin GPIO_PIN_13
+#define SPI2_SCK_GPIO_Port GPIOB
+#define GPIO_OUT2_Pin GPIO_PIN_14
+#define GPIO_OUT2_GPIO_Port GPIOB
+#define GPIO_OUT1_Pin GPIO_PIN_15
+#define GPIO_OUT1_GPIO_Port GPIOB
+#define USART6_TX_Pin GPIO_PIN_6
+#define USART6_TX_GPIO_Port GPIOC
+#define USART6_RX_Pin GPIO_PIN_7
+#define USART6_RX_GPIO_Port GPIOC
+#define GPIO_IN2_Pin GPIO_PIN_8
+#define GPIO_IN2_GPIO_Port GPIOC
+#define GPIO_IN1_Pin GPIO_PIN_9
+#define GPIO_IN1_GPIO_Port GPIOC
+#define DMA4_Pin GPIO_PIN_8
+#define DMA4_GPIO_Port GPIOA
+#define DMA3_Pin GPIO_PIN_9
+#define DMA3_GPIO_Port GPIOA
+#define DMA2_Pin GPIO_PIN_10
+#define DMA2_GPIO_Port GPIOA
+#define DMA1_Pin GPIO_PIN_11
+#define DMA1_GPIO_Port GPIOA
 #define TMS_Pin GPIO_PIN_13
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14
 #define TCK_GPIO_Port GPIOA
+#define PPM_Pin GPIO_PIN_15
+#define PPM_GPIO_Port GPIOA
+#define SPI3_SCK_Pin GPIO_PIN_10
+#define SPI3_SCK_GPIO_Port GPIOC
+#define SPI3_MISO_Pin GPIO_PIN_11
+#define SPI3_MISO_GPIO_Port GPIOC
+#define SPI3_MOSI_Pin GPIO_PIN_12
+#define SPI3_MOSI_GPIO_Port GPIOC
 #define SWO_Pin GPIO_PIN_3
 #define SWO_GPIO_Port GPIOB
+#define USART1_TX_Pin GPIO_PIN_6
+#define USART1_TX_GPIO_Port GPIOB
+#define USART1_RX_Pin GPIO_PIN_7
+#define USART1_RX_GPIO_Port GPIOB
+#define I2C_SCL_Pin GPIO_PIN_8
+#define I2C_SCL_GPIO_Port GPIOB
+#define I2C_SDA_Pin GPIO_PIN_9
+#define I2C_SDA_GPIO_Port GPIOB
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
