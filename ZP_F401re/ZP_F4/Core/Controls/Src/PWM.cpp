@@ -16,7 +16,7 @@
  * Defines
  **************************************/
 const uint8_t MAX_CHANNELS = 10;
-const uint8_t NUM_AVAIL_CHANNELS = 8;
+const uint8_t NUM_AVAILABLE_CHANNELS = 8;
 const uint8_t DSHOT_DATA_FRAME_LEN = 16;
 const uint8_t DSHOT_DMA_BUFFER_SIZE = 18;
 const uint16_t DSHOT_MAX_THROTTLE = 2000;
