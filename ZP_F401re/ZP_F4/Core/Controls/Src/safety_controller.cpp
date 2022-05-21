@@ -2,7 +2,7 @@
  * safety_controller.cpp
  *
  *  Created on: May 15, 2022
- *      Author: antho
+ *      Author: Anthony Luo
  */
 
 #include "../Inc/PWM.hpp"
@@ -12,7 +12,7 @@
 void safetyRun(){
 	// Runs safety!
 	 PWMChannel *pwm = new PWMChannel();
-	 uint8_t max_channels = 2;
+	 uint8_t max_channels = 8;
 	 for(int i =0; i< max_channels; ++i) {
 		 pwm->set(i, 75);
 	 }
