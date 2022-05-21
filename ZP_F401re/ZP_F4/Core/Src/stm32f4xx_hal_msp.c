@@ -66,7 +66,7 @@ extern DMA_HandleTypeDef hdma_tim1_ch4_trig_com;
 /* USER CODE END 0 */
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
-                                        /**
+
   * Initializes the Global MSP.
   */
 void HAL_MspInit(void)
@@ -604,6 +604,7 @@ void HAL_TIM_Base_MspDeInit(TIM_HandleTypeDef* htim_base)
 }
 
 /**
+
 * @brief UART MSP Initialization
 * This function configures the hardware resources used in this example
 * @param huart: UART handle pointer
