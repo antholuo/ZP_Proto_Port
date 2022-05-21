@@ -1,8 +1,0 @@
-../Core/Controls/Src/PWM.cpp:48:1:PWMChannel::PWMChannel()	48	static
-../Core/Controls/Src/PWM.cpp:61:6:void PWMChannel::set(uint8_t, float)	48	static
-../Core/Controls/Src/PWM.cpp:82:6:void PWMChannel::dshotPrepareDMABuffer(uint32_t*, float)	32	static
-../Core/Controls/Src/PWM.cpp:100:10:uint16_t PWMChannel::dshotPrepareFrame(float, bool)	32	static
-../Core/Controls/Src/PWM.cpp:123:6:void PWMChannel::dshotStartDMA(PWMPinConfig)	24	static
-../Core/Controls/Src/PWM.cpp:147:6:void PWMChannel::dshotEnableDMARequests(PWMPinConfig)	16	static
-../Core/Controls/Src/PWM.cpp:149:1:void __static_initialization_and_destruction_0(int, int)	16	static
-../Core/Controls/Src/PWM.cpp:149:1:cpp)	8	static
