@@ -23,6 +23,13 @@
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
+extern DMA_HandleTypeDef hdma_tim1_ch1;
+
+extern DMA_HandleTypeDef hdma_tim1_ch2;
+
+extern DMA_HandleTypeDef hdma_tim1_ch3;
+
+extern DMA_HandleTypeDef hdma_tim1_ch4_trig_com;
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
@@ -57,7 +64,9 @@
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
-/**
+
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
   * Initializes the Global MSP.
   */
 void HAL_MspInit(void)
@@ -77,7 +86,6 @@ void HAL_MspInit(void)
 
   /* USER CODE END MspInit 1 */
 }
-
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */

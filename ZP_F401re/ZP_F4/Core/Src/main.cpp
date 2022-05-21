@@ -53,6 +53,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -161,6 +162,7 @@ void SystemClock_Config(void)
     Error_Handler();
   }
 }
+
 
 /* USER CODE BEGIN 4 */
 
