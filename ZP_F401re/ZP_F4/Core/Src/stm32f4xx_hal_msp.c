@@ -23,13 +23,6 @@
 /* USER CODE BEGIN Includes */
 
 /* USER CODE END Includes */
-extern DMA_HandleTypeDef hdma_tim1_ch1;
-
-extern DMA_HandleTypeDef hdma_tim1_ch2;
-
-extern DMA_HandleTypeDef hdma_tim1_ch3;
-
-extern DMA_HandleTypeDef hdma_tim1_ch4_trig_com;
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
@@ -115,7 +108,6 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /* USER CODE BEGIN ADC1_MspInit 1 */
-
   /* USER CODE END ADC1_MspInit 1 */
   }
 
