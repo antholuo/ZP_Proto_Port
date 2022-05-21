@@ -12,14 +12,10 @@
 void safetyRun(){
 	// Runs safety!
 	 PWMChannel *pwm = new PWMChannel();
-	 pwm->set(0, 75);
-	 pwm->set(1, 25);
-	 pwm->set(2, 75);
-	 pwm->set(3, 25);
-	 pwm->set(4, 75);
-	 pwm->set(5, 25);
-	 pwm->set(6, 75);
-	 pwm->set(7, 25);
+	 uint8_t max_channels = 2;
+	 for(int i =0; i< max_channels; ++i) {
+		 pwm->set(i, 75);
+	 }
 
 	 while (1) {
 		 // toggle LED pin?

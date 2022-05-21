@@ -1,5 +1,4 @@
 Core/Controls/Src/PWM.o: ../Core/Controls/Src/PWM.cpp \
- ../Core/Controls/Src/../Inc/PWM.hpp \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h \
  ../Core/Inc/stm32f4xx_hal_conf.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h \
@@ -34,9 +33,7 @@ Core/Controls/Src/PWM.o: ../Core/Controls/Src/PWM.cpp \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Core/Controls/Src/../Inc/controls_constants.hpp ../Core/Inc/main.h \
- ../Core/Inc/tim.h ../Core/Inc/main.h
-../Core/Controls/Src/../Inc/PWM.hpp:
+ ../Core/Controls/Src/../Inc/PWM.hpp ../Core/Inc/main.h
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h:
@@ -71,7 +68,5 @@ Core/Controls/Src/PWM.o: ../Core/Controls/Src/PWM.cpp \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-../Core/Controls/Src/../Inc/controls_constants.hpp:
-../Core/Inc/main.h:
-../Core/Inc/tim.h:
+../Core/Controls/Src/../Inc/PWM.hpp:
 ../Core/Inc/main.h:
