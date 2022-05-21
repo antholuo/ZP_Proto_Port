@@ -1,10 +1,12 @@
-/**
- * Implementation by Anthony Luo, 2022.
- * Test file to create PWM Outputs.
+/*
+ * PWM.hpp
  *
+ *  Created on: May 21, 2022
+ *      Author: Anthony (Anni) Luo
  */
 
-// iteration May 2022
+#ifndef CONTROLS_INC_PWM_HPP_
+#define CONTROLS_INC_PWM_HPP_
 // Tim3 Ch1&2 are pwm outs on pa6/pa7
 
 
@@ -48,21 +50,71 @@ typedef struct PWMGroupSetting {
 } PWMGroupSetting;
 
 
+typedef enum dshotType { DSHOT150, DSHOT300, DSHOT600 } dshotType;
+
 class PWMChannel {
-public:
-	PWMChannel();
-	void set(uint8_t channel, float percent);
-private:
-	//values in us
-	uint32_t pwmPeriod = 20000;
-	uint32_t min_signal = 950; //standard for 50hz pwm signal, with a 100 Hz margin added to ensure we can reach the extreme values.
-	uint32_t max_signal = 2050;
+ public:
+  PWMChannel();
+  void set(uint8_t channel, float percent);
+
+ private:
+  // values in us
+  uint32_t pwmPeriod = 20000;
+  uint32_t min_signal = 950;  // standard for 50hz pwm signal, with a 100 Hz margin.
+  uint32_t max_signal = 2050;
+
+  /**
+   * @brief Prepares the Dshot data frame including the data, telemetry bit, and checksum
+   * @param throttlePercentage Trottle percentage output from the PID loop, 0-100%
+   * @param telemetry Bool indicating whether to set the telemetry bit or not
+   * @retval 16 bit dshot data frame
+   */
+  uint16_t dshotPrepareFrame(float throttlePercentage, bool telemetry);
+
+  /**
+   * @brief Prepares the DMA buffer using the data frame
+   * @param dmaBuffer Pointer to the DMA buffer
+   * @param frame DSHOT data frame
+   * @retval None
+   */
+  void dshotPrepareDMABuffer(uint32_t *dmaBuffer, float throttlePercentage);
+
+  /**
+   * @brief Starts PWM generation of channels 1-4 on TIM1
+   * @param dmaBuffer Pointer to the DMA buffer
+   * @param None
+   * @retval None
+   */
+  void dshotStartPWM();
+
+  /**
+   * @brief Starts DMA peripheral
+   * @param dshotConfig which is of type struct PWMPinConfig used to start the DMA
+   * @retval None
+   */
+  void dshotStartDMA(PWMPinConfig dshotConfig);
+
+  /**
+   * @brief Enables DMA request
+   * @param dshotConfig which is of type struct PWMPinConfig used to enable the DMA request
+   * @retval None
+   */
+  void dshotEnableDMARequests(PWMPinConfig dshotConfig);
+
+  /**
+   * @brief Links the "dshotDMACompleteCallback" callback function to the specific dma channel
+   * @param None
+   * @retval None
+   */
+  void dshotSetupDMACallbacks();
+};
 
 /**
-  * @brief Starts PWM generation of channels 1-4 on TIM1
-  * @param dmaBuffer Pointer to the DMA buffer
-  * @param None
-  * @retval None
-  */
-    void dshotStartPWM();
-};
+ * @brief Callback function to be called when a DMA transfer is complete
+ * @param hdma pointer to DMA handle
+ * @retval None
+ */
+void dshotDMACompleteCallback(DMA_HandleTypeDef *hdma);
+
+#endif /* CONTROLS_INC_PWM_HPP_ */
+
